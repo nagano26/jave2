@@ -1,12 +1,15 @@
 
 let display=document.getElementById("display");
+let perator=document.getElementById("operator")
+console.log(perator);
+
 let target_val
-let operator=["+","-","*","/","."]
-console.log(operator.includes("display"))
+let operators=["+","-","*","/","."]
 
 function clickbutton(target){
     target_val=target.innerHTML
     
+  
     if(target_val =="AC"){
         display.innerHTML="0"
     }else if(target_val =="="){
@@ -14,35 +17,63 @@ function clickbutton(target){
     }else{
         if(display.innerHTML == "0"){
             display.innerHTML = target_val
-        }else if(operator.includes(display.innerHTML.slice(-1)) == true){
-            display.innerHTML
         }else{
             display.innerHTML += target_val
         }
     }
-
 }
-    
+
+function plus(){
+    if(target_val == '+'){
+        return;
+    }else{
+        display.innerHTML=eval(display.innerHTML)
+    }
+    target_val = "+"
+     display.innerHTML += target_val
+}
+
+function minus(){
+    if(target_val == '-'){
+        return;
+    }else{
+        display.innerHTML=eval(display.innerHTML)
+    }
+    target_val = "-"
+    display.innerHTML += target_val
+}
+
+function times(){
+    if(target_val == '*'){
+        return;
+    }else{
+        display.innerHTML=eval(display.innerHTML)
+    }
+    target_val = "*"
+    display.innerHTML += target_val
+}
+
+function divided(){
+    if(target_val == '/'){
+        return;
+    }else{
+        display.innerHTML=eval(display.innerHTML)
+    }
+    target_val = "/"
+    display.innerHTML += target_val
+}
+
+function con(){
+    if(target_val == '.'){
+        return;
+    }else{
+        display.innerHTML=eval(display.innerHTML)
+    }
+    target_val = "."
+    display.innerHTML += target_val
+}
 
 
-
-
-
-        
-        // if(display.innerHTML.slice(-1) === "+"){
-        // return;
-        // }else{
-        //     display.innerHTML += target_val
-        // }
-        
-    
-
-
-// function clickbutton(target){
-//     target_val=target.innerHTM
-    
-//     if(display.innerHTML.slice(-1) ==="+"){
-//         return
-//     }
-// }
-// display.innerHTML +=target_val
+function update(){
+    display.innerHTML="";
+}
