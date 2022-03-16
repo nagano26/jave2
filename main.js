@@ -16,8 +16,41 @@ function clickbutton(target){
         display.innerHTML=eval(display.innerHTML)
     }else{
         if(display.innerHTML == "0"){
-            display.innerHTML = target_val
-        }else{
+             display.innerHTML =target_val   
+            }else if(display.innerHTML == "00"){
+                display.innerHTML = target_val
+            }
+            else if(display.innerHTML.slice(-1) == "+"){
+                if(target_val == "0"){
+                    return;
+                }else if(target_val =="00"){
+                    return;
+                }else display.innerHTML += target_val
+            
+                
+            }else if(display.innerHTML.slice(-1) == "-"){
+                if(target_val == "0"){
+                    return;
+                }else if(target_val == "00"){
+                    return;
+                }else display.innerHTML += target_val
+            
+                
+            }else if(display.innerHTML.slice(-1) == "*"){
+                if(target_val == "0"){
+                    return;
+                }else if(target_val == "00"){
+                    return;
+                }else display.innerHTML += target_val
+            
+                
+            }else if(display.innerHTML.slice(-1) == "/"){
+                if(target_val == "0"){
+                    return;
+                }else if(target_val =="00"){
+                    return;
+                }else display.innerHTML += target_val
+            }else{
             display.innerHTML += target_val
         }
     }
